@@ -1,0 +1,13 @@
+<%= form_for(@author) do |q| %>
+    <%= q.label :name %></br>
+    <%= q.text_field :name %></br>
+
+    <%= q.label :age %></br>
+    <%= q.text_field :age %></br>
+
+    <%= q.label :address %></br>
+    <%= q.text_area :address %></br>
+
+    <%= q.submit 'save' %>
+
+<% end %>

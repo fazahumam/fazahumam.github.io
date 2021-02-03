@@ -1,0 +1,25 @@
+<%= form_for(@book) do |f| %>
+    <%= f.label :title %></br>
+    <% if @book.errors[:title].any? %>
+        <%= @book.errors[:title].first %>
+    <% end %>
+    <%= f.text_field :title %></br>    
+    
+    <%= f.label :page %></br>
+    <%= f.text_field :page %></br>
+    
+    <%= f.label :price %></br>
+    <%= f.text_field :price %></br>
+
+    <%= f.label :description %></br>
+    <% if @book.errors[:description].any? %>
+        <%= @book.errors[:description].first %>
+    <% end %>
+    <%= f.text_area :description %></br>
+
+    <%= f.submit 'save' %>
+<% end %>
+
+<% if flash[:notice].present? %>
+<%= flash[:notice] %>
+<% end %>

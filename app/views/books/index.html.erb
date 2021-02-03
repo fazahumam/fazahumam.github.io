@@ -1,0 +1,20 @@
+<% if flash[:notice].present? %>
+<%= flash[:notice] %>
+<% end %>
+<table>
+<tr>
+<td>Title</td>
+<td>Page</td>
+<td>Action</td>
+</tr>
+<% @books.each do |q| %>
+<tr>
+    <td><%= q.title %></td>
+    <td><%= q.page %></td>
+    <td><%= link_to 'detail', book_path(q) %></td>  <td><%= link_to 'edit', edit_book_path(q) %></td> <td><%= link_to 'delete', book_path(q), method: :delete, data: {confirm: 'are you sure?'} %></td>
+</tr>
+<% end %>
+</table>
+
+<%= link_to 'New book', new_book_path  %>
+<%= render 'info', popular_book: 'Attack On Titan' %>
